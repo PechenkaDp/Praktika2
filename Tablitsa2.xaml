@@ -1,0 +1,43 @@
+﻿<Window x:Class="Praktika_2.Tablitsa2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Praktika_2"
+        mc:Ignorable="d"
+        Title="Tablitsa2" Height="450" Width="800">
+    <Grid RenderTransformOrigin="0.337,0.07">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="Auto" MinHeight="250"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="perehod_Zitel" Grid.Column="2" Grid.Row="0" Content="Таблица Zitel" Click="Button_Click" Margin="12,10,10,10" RenderTransformOrigin="0.5,0.5" >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="Ydalenie" Content="Удаление строки" Click="Button_Click5" Margin="10,10,10,29" Grid.Row="2"/>
+        <Button x:Name="dobavlenie" Grid.Column="1" Grid.Row="0" Content="Добаление пунктов в таблице" Click="Button_Click4" Margin="10,10,10,10"/>
+        <DataGrid x:Name="workTabl" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Height="230" VerticalAlignment="Center" Width="780" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <TextBox x:Name="rabota_name" Grid.Column="1" HorizontalAlignment="Left" Height="19" Margin="0,21,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="277"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="21" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="277"><Run Language="ru-ru" Text="Название работы"/></TextBlock>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="18" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="119"><Run Language="ru-ru" Text="Затраты"/></TextBlock>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="119,0,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="117"><Run Language="ru-ru" Text="Зарплата"/></TextBlock>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="236,0,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="106"><Run Language="ru-ru" Text="Время работы"/></TextBlock>
+        <TextBox x:Name="zatraty" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="0,59,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="114"/>
+        <TextBox x:Name="zarplata" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="114,59,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
+        <TextBox x:Name="hours" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="236,59,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="106"/>
+    </Grid>
+</Window>
